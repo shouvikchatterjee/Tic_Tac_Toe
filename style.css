@@ -1,4 +1,4 @@
-/* created by Shouvik on 30/05/2020 -- */
+/* created by Shouvik on 30/05/2020 -- 31/05/2020*/
 body
 {
 	font-family: "Times New Roman", Times, serif;
@@ -25,17 +25,14 @@ h1{
 }
 .row{
 	width:100%;
-	/* height:40vh; */
 	margin:auto;
 }
 .col-4{
-	/* background-color:#fff; */
 	display:flex;
 	font-size:2em;
 	border-radius:5px;
 	border:1px solid #fff;
 	margin:1px auto;
-	/* width:30%; */
 	max-width:32%;
 	height:80px;
 	cursor:pointer;
@@ -71,9 +68,9 @@ h1{
 @keyframes shadow-pulse
 {
   0% {
-    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 0 0px rgba(255,255,255, 0.2);
   }
   100% {
-    box-shadow: 0 0 0 35px rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 35px rgba(255,255,255, 0);
   }
 }
