@@ -3,13 +3,13 @@ $(document).ready(function(){
 	var turn = "p1";
 	$(".button").click(function(){	
 		var btn = $(this).attr('id');
-		if(turn == "p2"){
+		if(turn == "p1"){
 			if(!$(this).hasClass("occupied")){
 				$(this).addClass("occupied");
 				$(this).addClass("tick");
-				$(this).html("&#9899;");
-				turn = "p1";
-				$(".player").html("Player 1 Turn!");
+				$(this).html("&#10004;");
+				turn = "p2";
+				$(".player").html("Player 2 Turn!");
 			}else{
 				$(this).css("background-color", "red"); 
 				setTimeout(function(){
@@ -21,8 +21,8 @@ $(document).ready(function(){
 				$(this).addClass("occupied");
 				$(this).addClass("cross");
 				$(this).html("&#10006;");
-				turn = "p2";
-				$(".player").html("Player 2 Turn!");
+				turn = "p1";
+				$(".player").html("Player 1 Turn!");
 			}else{
 				$(this).css("background-color", "red"); 
 				setTimeout(function(){				
@@ -108,14 +108,14 @@ $(document).ready(function(){
 		$(".button").css("cursor","default");
 		$(".replay").css('display','block');
 	}
-	function player1Common(btn1,btn2,btn3){
+	function player2Common(btn1,btn2,btn3){
 		btn1.css('color','red');
 		btn2.css('color','red');
 		btn3.css('color','red');
 		$(".player").html("Player 1 wins!!");
 		$(".player").css('color','red');
 	}
-	function player2Common(btn1,btn2,btn3){
+	function player1Common(btn1,btn2,btn3){
 		btn1.css('color','green');
 		btn2.css('color','green');
 		btn3.css('color','green');
@@ -142,33 +142,33 @@ $(document).ready(function(){
 		$(".button").bind({
 			click : function(){
 				var btn = $(this).attr('id');
-				if(turn == "p2"){
-					if(!$(this).hasClass("occupied")){
-						$(this).addClass("occupied");
-						$(this).addClass("tick");
-						$(this).html("&#9899;");
-						turn = "p1";
-						$(".player").html("Player 1 Turn!");
-					}else{
-						$(this).css("background-color", "red"); 
-						setTimeout(function(){
-							$(".occupied").css("background-color", "black"); 
-						},800);
-					}
+			if(turn == "p1"){
+				if(!$(this).hasClass("occupied")){
+					$(this).addClass("occupied");
+					$(this).addClass("tick");
+					$(this).html("&#10004;");
+					turn = "p2";
+					$(".player").html("Player 2 Turn!");
 				}else{
-					if(!$(this).hasClass("occupied")){
-						$(this).addClass("occupied");
-						$(this).addClass("cross");
-						$(this).html("&#10006;");
-						turn = "p2";
-						$(".player").html("Player 2 Turn!");
-					}else{
-						$(this).css("background-color", "red"); 
-						setTimeout(function(){				
-							$(".occupied").css("background-color", "black"); 
-						},800);
-					}
+					$(this).css("background-color", "red"); 
+					setTimeout(function(){
+						$(".occupied").css("background-color", "black"); 
+					},800);
 				}
+			}else{
+				if(!$(this).hasClass("occupied")){
+					$(this).addClass("occupied");
+					$(this).addClass("cross");
+					$(this).html("&#10006;");
+					turn = "p1";
+					$(".player").html("Player 1 Turn!");
+				}else{
+					$(this).css("background-color", "red"); 
+					setTimeout(function(){				
+						$(".occupied").css("background-color", "black"); 
+					},800);
+				}
+			}
 				
 				checkWinner();
 			}
